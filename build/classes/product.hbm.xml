@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.ecom1.models.Product" table="product">
+      <id name="productId" type="integer" column="product_id">
+         <generator class="native"/>
+      </id>
+      <property name="productName" column="product_name" type="string" not-null="true"/>
+      <property name="productPrice" column="product_price" type="double" not-null="true"/>
+      <property name="productCategory" column="product_category" type="string"  not-null="true"/>
+      <property name="productGender" column="product_gender" type="string" not-null="true" />
+      <property name="productSize" column="product_size" type="string" not-null="true"/>
+      <property name="productDescription" column="product_description" type="string"/>
+      <property name="productBrand" column="product_brand" type="string" not-null="true"/>
+      <property name="productImage" column="product_image" type="string" not-null="true"/>
+      <property name="productType" column="product_type" type="string" not-null="true"/>
+      <many-to-one name="vendor" column="vendor_id" class="com.ecom1.models.Vendor" cascade="all"></many-to-one>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.ecom1.models.Order" table="orders">
+      <id name="orderId" type="integer" column="order_id">
+         <generator class="native"/>
+      </id>
+      <property name="orderDate" column="order_date" type="date" not-null="true" />
+      <property name="orderDeliveryDate" column="order_delivery_date" type="date"/>
+      <property name="orderQuantity" column="order_quantity" type="int" not-null="true"/>
+      <property name="orderTotalAmount" column="order_total_amount" type="double" />
+      <property name="orderStatus" column="order_status" type="string" not-null="true"/>
+      <many-to-one name="customerId" column="customer_id"></many-to-one>
+   </class>
+</hibernate-mapping>

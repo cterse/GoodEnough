@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.ecom1.models.OrderProducts" table="orderproducts">
+      <id name="orderProductsId" type="integer" column="order_products_id">
+         <generator class="native"/>
+      </id>
+      <many-to-one name="orderId" column="order_id"></many-to-one>
+       <many-to-one name="productId" column="product_id"></many-to-one>
+        <property name="productQuantity" column="product_quantity" type="int" not-null="true"/>
+   </class>
+</hibernate-mapping>

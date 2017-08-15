@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.ecom1.models.Vendor" table="vendor">
+      <id name="vendorId" type="integer" column="vendor_id">
+         <generator class="native"/>
+      </id>
+      <property name="vendorName" column="vendor_name" type="string"/>
+      <property name="vendorEmail" column="vendor_email" type="string" unique="true" not-null="true"/>
+      <property name="vendorPhone" column="vendor_phone" type="string" unique="true" />
+      <property name="vendorPassword" column="vendor_password" type="string"/>
+   </class>
+</hibernate-mapping>
